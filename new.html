@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffa500;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            width: 70%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .container h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .container label {
+            display: block;
+            margin-top: 10px;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="number"],
+        .container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        .container input[type="submit"] {
+            margin-top: 20px;
+            width: 50%;
+            padding: 10px;
+            background-color: #ff8800;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .container input[type="submit"]:hover {
+            background-color: #e07600;
+        }
+        .options {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+        <h2>User Stories Survey Form</h2>
+        <form action="https://formspree.io/f/xbljjkvq" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="work_experience">Work Experience (years)</label>
+            <input type="number" id="work_experience" name="work_experience" required>
+
+            <label>Are you comfortable in investing in real estate on platform without first investigating properly?</label>
+            <div class="options">
+                <input type="radio" id="yes" name="investigating" value="yes" required>
+                <label for="yes">Yes</label>
+            </div>
+            <div class="options">
+                <input type="radio" id="no" name="investigating" value="no" required>
+                <label for="no">No</label>
+            </div>
+
+            <label for="suggestions">Suggestions to build trusted platform (max 1000 words)</label>
+            <textarea id="suggestions" name="suggestions" maxlength="1000"></textarea>
+
+            <label>You are ready to invest in:</label>
+            <div class="options">
+                <input type="checkbox" id="real_estate" name="investment" value="real_estate">
+                <label for="real_estate">Real Estate</label>
+            </div>
+            <div class="options">
+                <input type="checkbox" id="mutual_funds" name="investment" value="mutual_funds">
+                <label for="mutual_funds">Mutual Funds</label>
+            </div>
+            <div class="options">
+                <input type="checkbox" id="crypto" name="investment" value="crypto_currency">
+                <label for="crypto">Crypto Currency</label>
+            </div>
+            <div class="options">
+                <input type="checkbox" id="stocks_bonds" name="investment" value="stocks_bonds">
+                <label for="stocks_bonds">Stocks & Bonds</label>
+            </div>
+
+            <label>Are you ready for further contact?</label>
+            <div class="options">
+                <input type="radio" id="contact_yes" name="contact" value="yes" required>
+                <label for="contact_yes">Yes</label>
+            </div>
+            <div class="options">
+                <input type="radio" id="contact_no" name="contact" value="no" required>
+                <label for="contact_no">No</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Form submitted');
+            this.submit();
+        });
+    </script>
+</body>
+</html>
